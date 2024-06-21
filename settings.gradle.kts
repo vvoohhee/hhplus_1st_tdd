@@ -12,4 +12,4 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "hhplus-tdd-jvm"
+rootProject.name = "hhplus_1st_tdd"
