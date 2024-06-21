@@ -3,6 +3,8 @@ package io.hhplus.tdd.point.service;
 import io.hhplus.tdd.point.PointHistory;
 import io.hhplus.tdd.point.TransactionType;
 import io.hhplus.tdd.point.UserPoint;
+import io.hhplus.tdd.point.handler.CompletableFutureHandler;
+import io.hhplus.tdd.point.handler.LockHandler;
 import io.hhplus.tdd.point.repository.PointHistoryRepository;
 import io.hhplus.tdd.point.repository.UserPointRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,6 +31,12 @@ public class PointServiceTest {
     @Mock
     PointValidator pointValidator;
 
+//    @Mock
+//    CompletableFutureHandler completableFutureHandler;
+
+    @Mock
+    LockHandler lockHandler;
+
     @InjectMocks
     PointService pointService;
 
@@ -37,6 +45,8 @@ public class PointServiceTest {
         // 목 객체를 초기화하기 위해 사용
         MockitoAnnotations.openMocks(this);
         pointValidator = new PointValidator();
+        lockHandler = new LockHandler();
+//        completableFutureHandler = new CompletableFutureHandler();
     }
 
     @Test
